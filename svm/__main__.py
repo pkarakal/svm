@@ -5,6 +5,7 @@ from svm.utils import download_mnist_dataset, visualize_batch, visualize_image, 
 from torch import nn
 from svm.SVM_Model import SVMModel
 import svm.knn_classifier as knn
+import svm.svm_classifier as svm
 
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -60,3 +61,5 @@ if __name__ == "__main__":
 
     print(f"Running K-nearest centroid classification\n")
     knn.centroid_classification(train_df, train_label, test_df, test_label)
+    print(f"Running support vector machine classification. This can take hours depending on your machine...")
+    svm.main()

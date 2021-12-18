@@ -23,7 +23,7 @@ def visualize_batch(train_loader):
         ax.imshow(np.squeeze(images[idx]), cmap='gray')
         # print out the correct label for each image
         # .item() gets the value contained in a Tensor
-        ax.set_title(str(labels[idx].item()))
+        ax.set_title(str('even' if labels[idx].item() == 0 else 'odd'))
 
     plt.show()
 
